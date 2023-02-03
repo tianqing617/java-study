@@ -2,7 +2,7 @@ package top.smartliu.pojo;
 
 public class User {
     private Integer id;
-    private String Username;
+    private String username;
     private String password;
     private String gender;
     private String addr;
@@ -16,11 +16,11 @@ public class User {
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        username = username;
     }
 
     public String getPassword() {
@@ -51,7 +51,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", Username='" + Username + '\'' +
+                ", Username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", gender='" + gender + '\'' +
                 ", addr='" + addr + '\'' +
