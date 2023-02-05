@@ -4,6 +4,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import top.smartliu.mapper.UserMapper;
 import top.smartliu.pojo.User;
 
 import java.io.IOException;
@@ -21,12 +22,17 @@ public class Demo1 {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
         //3. 执行sql
-        List<User> users = sqlSession.selectList("test.selectAll");
+        // 3.1 方式一：
+        /*List<User> users = sqlSession.selectList("test.selectAll");*/
+
+        // 3.2 方式二：解决硬编码问题
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        List<User> users = userMapper.selectAll();
+
         System.out.println(users.toString());
 
         //4. 释放资源
         sqlSession.close();
-
     }
 }
 

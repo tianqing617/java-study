@@ -1,4 +1,9 @@
-package top.smartliu.mapper.UserMapper;
+package top.smartliu.mapper;
 
-public class UserMapper {
+import top.smartliu.pojo.User;
+
+import java.util.List;
+
+public interface UserMapper {
+    List<User> selectAll();
 }

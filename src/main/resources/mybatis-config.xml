@@ -15,6 +15,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="top/smartliu/mapper/UserMapper.xml"/>
+<!--        <mapper resource="top/smartliu/mapper/UserMapper.xml"/>-->
+        <package name="top.smartliu.mapper"/>
     </mappers>
 </configuration>

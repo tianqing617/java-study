@@ -5,7 +5,8 @@
 
 <!--namespace:名称空间-->
 
-<mapper namespace="test">
+<mapper namespace="top.smartliu.mapper.UserMapper">
+
     <select id="selectAll" resultType="top.smartliu.pojo.User">
         select *
         from tb_user;
