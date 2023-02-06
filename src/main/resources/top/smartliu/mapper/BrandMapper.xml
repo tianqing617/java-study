@@ -6,8 +6,17 @@
 <!--namespace:名称空间-->
 
 <mapper namespace="top.smartliu.mapper.BrandMapper">
-    <select id="selectAll" resultType="top.smartliu.pojo.Brand">
+    <resultMap id="brandResultMap" type="top.smartliu.pojo.Brand">
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+    <select id="selectAll" resultMap="brandResultMap">
         select *
         from tb_brand;
+    </select>
+    <select id="selectById" resultMap="brandResultMap">
+        select *
+        from tb_brand
+        where id = #{id};
     </select>
 </mapper>
