@@ -30,19 +30,15 @@
         select *
         from tb_brand
         <where>
-            <!--相当于 switch-->
-            <choose>
-                <!--相当于case-->
-                <when test="status != null">
-                    status = #{status}
-                </when>
-                <when test="companyName != null and companyName != '' ">
-                    company_name like #{companyName}
-                </when>
-                <when test="brandName != null and brandName != ''">
-                    brand_name like #{brandName}
-                </when>
-            </choose>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="companyName != null and companyName != '' ">
+                and company_name like #{companyName}
+            </if>
+            <if test="brandName != null and brandName != ''">
+                and brand_name like #{brandName}
+            </if>
         </where>
     </select>
 </mapper>

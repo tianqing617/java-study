@@ -29,18 +29,18 @@ public class Demo2_Brand4Condition {
         // 3.2 方式二：解决硬编码问题
         // 3.2.1 接收参数
         int status = 1;
-        String companyName = "%华为%";
-        String brandName = "%华为%";
-
-        //封装对象
-        Brand brand = new Brand();
-        //brand.setStatus(status);
-        brand.setCompanyName(companyName);
-        //brand.setBrandName(brandName);
+        String companyName = "华为";
+        String brandName = "华为";
 
         // 3.2.2 处理参数
         companyName = "%" + companyName + "%";
         brandName = "%" + brandName + "%";
+
+        //封装对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompanyName(companyName);
+        brand.setBrandName(brandName);
 
         // 3.2.3 查询数据
         BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
