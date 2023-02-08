@@ -26,4 +26,23 @@
            and company_name like #{companyName}
            and brand_name like #{brandName}
     </select>
+    <select id="selectByCondition2" resultMap="brandResultMap">
+        select *
+        from tb_brand
+        <where>
+            <!--相当于 switch-->
+            <choose>
+                <!--相当于case-->
+                <when test="status != null">
+                    status = #{status}
+                </when>
+                <when test="companyName != null and companyName != '' ">
+                    company_name like #{companyName}
+                </when>
+                <when test="brandName != null and brandName != ''">
+                    brand_name like #{brandName}
+                </when>
+            </choose>
+        </where>
+    </select>
 </mapper>
