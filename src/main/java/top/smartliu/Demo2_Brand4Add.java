@@ -46,7 +46,10 @@ public class Demo2_Brand4Add {
         BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
 
         brandMapper.add(brand);
+        Integer id = brand.getId();
+        System.out.println("数据ID：" + id);
 
+        // MyBatis默认开启事务，进行CUD后需要手动提交事务
         sqlSession.commit();
 
         //4. 释放资源
