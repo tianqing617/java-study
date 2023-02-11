@@ -15,4 +15,6 @@ public interface BrandMapper {
     List<Brand> selectByCondition2(Brand brand);
 
     void add(Brand brand);
+
+    int update(Brand brand);
 }
